@@ -5,7 +5,7 @@
   const servicesCurrent = servicePages.includes(page) ? ' aria-current="page"' : '';
   const header = `
     <header class="site-header"><nav class="nav container" aria-label="Primary navigation">
-      <a class="brand" href="/" aria-label="Widberz home"><img src="/assets/images/widberz-logo.webp" alt="Widberz"></a>
+      <a class="brand" href="/" aria-label="Widberz home"><img src="/wp-content/uploads/2025/06/Small-WIdberz-Logo-1.png" alt="Widberz" width="100" height="100"></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-links">☰<span class="sr-only">Menu</span></button>
       <div class="nav-links" id="primary-links">
         <a href="/"${current('home')}>Home</a>
@@ -26,10 +26,17 @@
       <section><h2>Widberz</h2><p>Practical digital systems for businesses ready to work simpler, smarter and more scalably.</p></section>
       <section><h2>Explore</h2><div class="footer-links"><a href="/services/">Services</a><a href="/wcps/">WCPS</a><a href="/zoho/">Zoho Partner</a><a href="/about/">About</a></div></section>
       <section><h2>Resources</h2><div class="footer-links"><a href="/resources/articles/">Articles</a><a href="/resources/faqs/">FAQs</a><a href="/resources/guides/">Guides</a></div></section>
-      <section><h2>Contact</h2><div class="footer-links"><a href="mailto:info@widberz.com">info@widberz.com</a><a href="tel:+26876233264">+268 76 233 264</a><a href="/contact-us/">Get in touch</a></div></section>
+      <section><h2>Contact</h2><div class="footer-links"><a href="mailto:info@widberz.com">info@widberz.com</a><a href="tel:+26876060299">+268 7606 0299</a><a href="/contact-us/">Get in touch</a></div></section>
     </div><div class="container copyright">© ${new Date().getFullYear()} Widberz Consulting. All rights reserved.</div></footer>`;
   document.querySelector('[data-site-header]')?.replaceWith(document.createRange().createContextualFragment(header));
   document.querySelector('[data-site-footer]')?.replaceWith(document.createRange().createContextualFragment(footer));
   const button = document.querySelector('.nav-toggle'); const links = document.querySelector('.nav-links');
   button?.addEventListener('click', () => { const open = links.classList.toggle('is-open'); button.setAttribute('aria-expanded', String(open)); });
+
+  // Add the favicon dynamically to the document head
+  const favicon = document.createElement('link');
+  favicon.rel = 'icon';
+  favicon.sizes = '32x32';
+  favicon.href = '/wp-content/uploads/2025/06/cropped-Widberz-Favicon-32x32.png';
+  document.head.appendChild(favicon);
 })();
